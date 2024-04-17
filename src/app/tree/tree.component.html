@@ -1,7 +1,7 @@
 @for (item of data; track item.id) {
 <div>
 
-  <div class="table-display">
+  <div class="table-display border-bottom">
     <div>
       @if (item.children && item.children.length > 0 ) {
       <span class="cursor-pointer" (click)="toggleExpanded(item)"> {{ item.expanded ? '&#9660;' : '&#9658;' }}</span>
