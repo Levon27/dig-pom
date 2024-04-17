@@ -8,7 +8,7 @@
       }
       <span>{{ item.name }}</span>
     </div>
-    <span>{{ item.budgeted }}</span>
+    <span>{{ item.budgeted | currency : '' : '' }}</span>
   </div>
 
   @if (item.expanded && item.children) {
