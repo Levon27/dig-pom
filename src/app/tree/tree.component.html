@@ -1,0 +1,21 @@
+@for (item of data; track item.id) {
+<div>
+
+  <div class="table-display">
+    <div>
+      @if (item.children && item.children.length > 0 ) {
+      <span class="cursor-pointer" (click)="toggleExpanded(item)"> {{ item.expanded ? '&#9660;' : '&#9658;' }}</span>
+      }
+      <span>{{ item.name }}</span>
+    </div>
+    <span>{{ item.budgeted }}</span>
+  </div>
+
+  @if (item.expanded && item.children) {
+  <div class="child-tree">
+    <app-tree [data]="item.children!"></app-tree>
+  </div>
+  }
+
+</div>
+}
